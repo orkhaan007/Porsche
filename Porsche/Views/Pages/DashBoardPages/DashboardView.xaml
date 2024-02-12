@@ -1,0 +1,927 @@
+﻿<Page x:Class="Porsche.Views.Pages.DashBoardView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Porsche.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      x:Name="DashBoardPage"
+      
+      Title="Porsche HOME - Porsche USA"
+      >
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Background="White" Height="8000" Width="1800">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1010"/>
+                <RowDefinition Height="550"/>
+                <RowDefinition Height="2800"/>
+                <RowDefinition Height="600"/>
+                <RowDefinition Height="800"/>
+                <RowDefinition Height="560"/>
+                <RowDefinition Height="1010"/>
+                <RowDefinition Height="1400"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Name="GridRow">
+                <MediaElement x:Name="MediaElementBackground" Grid.Row="0" Source="../../../StaticFiles/Videos/Porsche Taycan Turbo S.mp4" HorizontalAlignment="Left" LoadedBehavior="Play"/>
+                <Button
+                    Grid.Row="0"
+                    Command="{Binding DashBoaardPageCommand}"
+                    CommandParameter="{Binding ElementName=DashBoardPage}"
+                    Width="220"
+                    Height="50"
+                    BorderThickness="2"
+                    Background="Transparent"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0 5 0 0"
+                    BorderBrush="Transparent" >
+                </Button>
+                <Image Grid.Row="0" Source="../../../StaticFiles/Image/Icons/Porsche.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 25 0 0"/>
+
+                <Button
+                    Grid.Row="0"
+                    Command="{Binding ShowLoginPageCommand}"
+                    CommandParameter="{Binding ElementName=DashBoardPage}"
+                    Width="50"
+                    Height="40"
+                    BorderThickness="2"
+                    Background="Transparent"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Margin="0 25 100 0"
+                    BorderBrush="Transparent" >
+                    <materialDesign:PackIcon Kind="Account" Grid.Row="0" Foreground="White" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0"/>
+                </Button>
+                <materialDesign:PackIcon Kind="Menu" Grid.Row="0" Foreground="White" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90 25 0 0"/>
+                <Label Content="Menu" Grid.Row="0" Foreground="White"  HorizontalAlignment="Left" FontSize="15" VerticalAlignment="Top" Margin="120 28 0 0" FontFamily="Arial" FontWeight="Medium"/>
+
+                <Label Content="Fully-jaw-" Grid.Row="0" Foreground="White"  HorizontalAlignment="Left" FontSize="120" VerticalAlignment="Bottom" Margin="200 28 0 450" FontFamily="Arial" FontWeight="Medium"/>
+                <Label Content="dropping-" Grid.Row="0" Foreground="White"  HorizontalAlignment="Left" FontSize="120" VerticalAlignment="Bottom" Margin="200 28 0 330" FontFamily="Arial" FontWeight="Medium"/>
+                <Label Content="electric." Grid.Row="0" Foreground="White"  HorizontalAlignment="Left" FontSize="120" VerticalAlignment="Bottom" Margin="200 28 0 220" FontFamily="Arial" FontWeight="Medium"/>
+
+                <Button
+               Grid.Row="0"
+               x:Name="StopBtn"
+               Command="{Binding StopCommand}"
+               CommandParameter="{Binding ElementName=GridRow}"
+               Width="40"
+               Height="40"
+               BorderThickness="2"
+               Background="Transparent"
+               Foreground="White"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Right"
+               Margin="0 800 100 0"
+               IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+               Style="{StaticResource MaterialDesignPaperLightButton}"
+               BorderBrush="White" >
+                    <materialDesign:PackIcon Kind="Pause" Grid.Row="0" Foreground="White" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0"/>
+                </Button>
+            </Grid>
+
+            <Button
+                Command="{Binding ShowBuildYourTaycanPageCommand}"
+                CommandParameter="{Binding ElementName=DashBoardPage}"
+                Width="240"
+                Height="50"
+                Foreground="White"
+                Background="Transparent"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Margin="210 0 0 130"
+                Content="The Taycan. Starting at $90,900"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignPaperLightButton}"
+                BorderBrush="White" />
+
+            <!--Home Stage Image Containers -->
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" CornerRadius="20" Margin="200 150 0 100" >
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageImageContainer/1.png" />
+                    </Border.Background>
+                </Border>
+
+                <Label Grid.Column="0" Content="The New Cayenne E-Hybrid Coupe." Margin="230 400 0 0" Foreground="White" FontSize="15" FontWeight="SemiBold" FontFamily="Arial" HorizontalAlignment="Left"/>
+                <Button
+                    Grid.Column="0"
+                    Command="{Binding ShowBuildYourCayennePageCommand}"
+                    CommandParameter="{Binding ElementName=DashBoardPage}"
+                    Width="30"
+                    Height="30"
+                    BorderThickness="2"
+                    Background="Transparent"
+                    HorizontalAlignment="Right"
+                    Margin="0 280 40 0"
+                    BorderBrush="Transparent" />
+                
+                <materialDesign:PackIcon Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Right" Foreground="White" Grid.Column="0" Margin="0 400 40 0"/>
+
+                <Border Grid.Column="1" CornerRadius="20" Margin="100 150 100 100">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageImageContainer/3.png"/>
+                    </Border.Background>
+                </Border>
+
+                <Label Grid.Column="1" Content="The New 911 S/T." Margin="130 400 0 0" Foreground="White" FontSize="15" FontWeight="SemiBold" FontFamily="Arial" HorizontalAlignment="Left"/>
+                <Button
+                Grid.Column="1"
+                Command="{Binding ShowBuildYour911PageCommand}"
+                CommandParameter="{Binding ElementName=DashBoardPage}"
+                Width="30"
+                Height="30"
+                BorderThickness="2"
+                Background="Transparent"
+                HorizontalAlignment="Right"
+                Margin="0 280 140 0"
+                BorderBrush="Transparent" />
+                
+                <materialDesign:PackIcon Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Right" Foreground="White" Grid.Column="1" Margin="0 400 140 0"/>
+
+                <Border Grid.Column="2" CornerRadius="20" Margin="0 150 200 100">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageImageContainer/2.png"/>
+                    </Border.Background>
+                </Border>
+
+                <Label Grid.Column="2" Content="Look Back on RR7." Margin="30 400 0 0" Foreground="White" FontSize="15" FontWeight="SemiBold" FontFamily="Arial" HorizontalAlignment="Left"/>
+                <Button
+                    Grid.Column="2"
+                    Command="{Binding OpenMEPageCommand}"
+                    CommandParameter="{Binding ElementName=DashBoardPage}"
+                    Width="30"
+                    Height="30"
+                    BorderThickness="2"
+                    Background="Transparent"
+                    HorizontalAlignment="Right"
+                    Margin="0 280 230 0"
+                    BorderBrush="Transparent" />
+                
+                <materialDesign:PackIcon Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Right" Foreground="White" Grid.Column="2" Margin="0 400 230 0"/>
+            </Grid>
+
+            <!--Home Stage Models Containers -->
+
+            <Label Grid.Row="2" Content="Models" Margin="0 100 0 0" Foreground="Black" FontSize="45" FontWeight="SemiBold" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1000"/>
+                    <RowDefinition Height="800"/>
+                    <RowDefinition Height="1000"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" CornerRadius="10" Margin="300 200 20 50">
+                        <Border.Background>
+                            <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageModelsContainer/718.png"/>
+                        </Border.Background>
+                    </Border>
+
+                    <Label Grid.Column="0" Content="The mid-engine sports car for two." Margin="170 790 0 0" Foreground="White" FontSize="25" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="0" Content="From $ 68,300*" Margin="-100 830 0 0" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                    <Button
+                        Grid.Column="0"
+                        Command="{Binding showConstructYour718Command}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="140"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="-70 780 0 0"
+                        Content="Build your 718"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Button
+                        Grid.Column="0"
+                        Command="{Binding ShowBuildYour718PageCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="140"
+                        Height="50"
+                        BorderThickness="2"
+                        Background="Transparent"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="240 780 0 0"
+                        Content="All 718 models"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Border Grid.Column="1" CornerRadius="10" Margin="20 200 300 50">
+                        <Border.Background>
+                            <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageModelsContainer/911.png"/>
+                        </Border.Background>
+                    </Border>
+
+                    <Label Grid.Column="1" Content="The quintessential, rear-engine sports car." Margin="-290 790 0 0" Foreground="White" FontSize="25" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="1" Content="From $ 115,400*" Margin="-640 830 0 0" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                    <Button
+                        Grid.Column="1"
+                        Command="{Binding showConstructYour911Command}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="140"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="-620 780 0 0"
+                        Content="Build your 911"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Button
+                        Grid.Column="1"
+                        Command="{Binding ShowBuildYour911PageCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="140"
+                        Height="50"
+                        BorderThickness="2"
+                        Background="Transparent"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="-310 780 0 0"
+                        Content="All 911 models"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" CornerRadius="10" Margin="300 0 20 50">
+                        <Border.Background>
+                            <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageModelsContainer/taycan.png"/>
+                        </Border.Background>
+                    </Border>
+
+                    <Label Grid.Column="0" Content="The pure expression of an electric sports car." Margin="290 600 0 0" Foreground="White" FontSize="25" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="0" Content="From $ 90,900*" Margin="-100 640 0 0" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                    <Button
+                        Grid.Column="0"
+                         Command="{Binding showConstructYourTaycanCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="150"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="-50 600 0 0"
+                        Content="Build your Taycan"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Button
+                        Grid.Column="0"
+                        Command="{Binding ShowBuildYourTaycanPageCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="150"
+                        Height="50"
+                        BorderThickness="2"
+                        Background="Transparent"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="280 600 0 0"
+                        Content="All Taycan models"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Border Grid.Column="1" CornerRadius="10" Margin="20 0 300 50">
+                        <Border.Background>
+                            <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageModelsContainer/panamera.png"/>
+                        </Border.Background>
+                    </Border>
+
+                    <Label Grid.Column="1" Content="The sports car with stylish design practicality." Margin="-260 600 0 0" Foreground="White" FontSize="25" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="1" Content="From $ 115,400*" Margin="-640 640 0 0" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+
+                    <Button
+                        Grid.Column="1"
+                         Command="{Binding showConstructYourPanameraCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="165"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="-590 600 0 0"
+                        Content="Build your Panamera"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Button
+                        Grid.Column="1"
+                        Command="{Binding ShowBuildYourPanameraPageCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="165"
+                        Height="50"
+                        BorderThickness="2"
+                        Background="Transparent"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="-230 600 0 0"
+                        Content="All Panamera models"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" CornerRadius="10" Margin="300 0 20 250">
+                        <Border.Background>
+                            <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageModelsContainer/macan.png"/>
+                        </Border.Background>
+                    </Border>
+
+                    <Label Grid.Column="0" Content="The sports car of compact SUVs." Margin="160 600 0 0" Foreground="White" FontSize="25" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="0" Content="From $ 60,900*" Margin="-100 640 0 0" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                    <Button
+                        Grid.Column="0"
+                         Command="{Binding showConstructYourMacanCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="140"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="-70 400 0 0"
+                        Content="Build your Macan"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Button
+                        Grid.Column="0"
+                        Command="{Binding ShowBuildYourMacanPageCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="145"
+                        Height="50"
+                        BorderThickness="2"
+                        Background="Transparent"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="250 400 0 0"
+                        Content="All Macan models"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Border Grid.Column="1" CornerRadius="10" Margin="20 0 300 250">
+                        <Border.Background>
+                            <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageModelsContainer/cayenne.png"/>
+                        </Border.Background>
+                    </Border>
+
+                    <Label Grid.Column="1" Content="Impressive sports car performance, five seats." Margin="-240 600 0 0" Foreground="White" FontSize="25" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="1" Content="From $ 79,200*" Margin="-640 640 0 0" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+
+                    <Button
+                        Grid.Column="1"
+                         Command="{Binding showConstructYourCayenneCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="165"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="-580 400 0 0"
+                        Content="Build your Cayenne"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Button
+                        Grid.Column="1"
+                        Command="{Binding ShowBuildYourCayennePageCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Width="165"
+                        Height="50"
+                        BorderThickness="2"
+                        Background="Transparent"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="-220 400 0 0"
+                        Content="All Cayenne models"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+
+                    <Label Grid.Column="0" FontSize="10" Margin="300 780 -380 0" Content="*Manufacturer’s Suggested Retail Price. Excludes options; taxes; title; registration; delivery, processing and handling fee; dealer charges. Dealer sets actual selling price."/>
+
+                </Grid>
+            </Grid>
+
+            <!--Home Stage Find Your Porsche Center Containers -->
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" CornerRadius="10" Margin="150 0 -150 100" Background="Black"/>
+
+                <Label Content="Find Your Porsche Center" Foreground="White" Margin="270 -190 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" FontWeight="SemiBold" FontFamily="Arial"/>
+                <Label Content="A Porsche Center, and your dream Porsche vehicle, may be closer than you" Foreground="White" Margin="260 -100 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12" FontWeight="Medium" FontFamily="Arial"/>
+                <Label Content="think. Search our Porsche Center network for the location closest to you." Foreground="White" Margin="240 -60 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12" FontWeight="Medium" FontFamily="Arial"/>
+
+
+
+                <Border Grid.Column="1" CornerRadius="10" Margin="150 0 150 100">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/FindYourPorscheCenterContainer/FindYourPorschCenter.png"/>
+                    </Border.Background>
+                </Border>
+
+                <Button
+                 Command="{Binding FindDealerCenterCommand}"
+                 CommandParameter="{Binding ElementName=DashBoardPage}"
+                 Grid.Column="0"
+                 Width="120"
+                 Height="50"
+                 Background="White"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Center"
+                 Margin="120 70 150 0"
+                 Content="Search now."
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignPaperLightButton}"
+                 BorderBrush="White" />
+
+            </Grid>
+
+            <!--Home Stage Find Your New Or Pre-Owned Porsche Containers -->
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Find your new or pre-owned" Margin="250 210 0 0" Foreground="Black" FontSize="35" FontWeight="SemiBold" FontFamily="Arial"/>
+                <Label Content="Porsche." Foreground="Black" Margin="250 250 0 0" FontSize="35" FontWeight="SemiBold" FontFamily="Arial"/>
+                <Label Content="Making it easy to find your dream Porsche. Enter your location and browse the best" Margin="250 300 0 0" FontSize="12" FontWeight="Medium" FontFamily="Arial"/>
+                <Label Content="car offers available near you." Margin="250 320 0 0" FontSize="12" FontWeight="Medium" FontFamily="Arial"/>
+                <Label Content="Enter a location for your search" Margin="250 370 0 0" FontSize="12" FontWeight="Medium" FontFamily="Arial"/>
+
+                <TextBox
+                    Height="50"
+                    materialDesign:HintAssist.Hint="Enter City or ZIP Code"
+                    AcceptsReturn="True"
+                    IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    TextWrapping="Wrap"
+                    VerticalScrollBarVisibility="Auto" 
+                    Margin="250 50 200 0" />
+
+                <Image Margin="200 100 0 100" Grid.Column="1" Source="../../../StaticFiles/Image/FindYourNewOrPreOwnedPorscheContainer/FindYourNewOrPreOwnedPorsche.png"/>
+
+            </Grid>
+
+            <!--Home Stage Online Shop Highlights Containers -->
+
+            <Label Grid.Row="5" Content="Online Shop Highlights" Margin="0 0 0 0" Foreground="Black" FontSize="35" FontWeight="SemiBold" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="600"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" CornerRadius="10" Margin="180 150 0 130">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/OnlineShopHighlightsContainer/WallCharger.png"/>
+                    </Border.Background>
+                </Border>
+
+                <Label Grid.Column="0" Content="Porsche Wall Charger Connect" FontFamily="Arial" Foreground="Black" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="200 0 0 70" FontWeight="Semibold"/>
+                <Label Grid.Column="0" Content="An easy charging solution for your home." FontFamily="Arial" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="200 0 0 45" FontWeight="Medium"/>
+                <Button
+                Grid.Column="0"
+                Command="{Binding OpenWCCPageCommand}"
+                Width="30"
+                Height="30"
+                BorderThickness="2"
+                Background="Transparent"
+                HorizontalAlignment="Left"
+                Margin="200 510 0 0"
+                BorderBrush="Transparent" />
+
+                <materialDesign:PackIcon Grid.Column="0" Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Black" Margin="200 0 0 8"/>
+                <Label Grid.Column="0" Content="Charger" FontFamily="Arial" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="225 0 0 10" FontWeight="Medium"/>
+
+                <Border Grid.Column="1" CornerRadius="10" Margin="0 150 0 100">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/OnlineShopHighlightsContainer/Watch.png"/>
+                    </Border.Background>
+                </Border>
+
+                <Label Grid.Column="1" Content="Porsche x Garmin® Epix smartwatch" FontFamily="Arial" Foreground="Black" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20 0 0 70" FontWeight="Semibold"/>
+                <Label Grid.Column="1" Content="GPS multisport smartwatch with unique Porsche details." FontFamily="Arial" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20 0 0 45" FontWeight="Medium"/>
+                <Button
+                  Grid.Column="1"
+                  Command="{Binding OpenWatchPageCommand}"
+                  Width="30"
+                  Height="30"
+                  BorderThickness="2"
+                  Background="Transparent"
+                  HorizontalAlignment="Left"
+                  Margin="20 510 0 0"
+                  BorderBrush="Transparent" />
+                
+                <materialDesign:PackIcon Grid.Column="1" Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Black" Margin="20 0 0 8"/>
+                <Label Grid.Column="1" Content="Smartwatch" FontFamily="Arial" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="45 0 0 10" FontWeight="Medium"/>
+
+                <materialDesign:PackIcon Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Right" Foreground="Black" Grid.Column="2" Margin="0 40 0 0"/>
+                <materialDesign:PackIcon Kind="ChevronLeft" Width="30" Height="30" HorizontalAlignment="Right" Foreground="Black" Grid.Column="2" Margin="0 40 40 0"/>
+
+                <Border Grid.Column="2" CornerRadius="10" Margin="0 150 0 100">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/OnlineShopHighlightsContainer/EBike.png"/>
+                    </Border.Background>
+                </Border>
+
+
+                <Label Grid.Column="2" Content="Porsche eBike Cross Performance" FontFamily="Arial" Foreground="Black" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20 0 0 70" FontWeight="Semibold"/>
+                <Label Grid.Column="2" Content="High-performance electric mountain bike from Porsche." FontFamily="Arial" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20 0 0 45" FontWeight="Medium"/>
+                <Button
+                  Grid.Column="2"
+                  Command="{Binding OpenEBikePageCommand}"
+                  Width="30"
+                  Height="30"
+                  BorderThickness="2"
+                  Background="Transparent"
+                  HorizontalAlignment="Left"
+                  Margin="20 510 0 0"
+                  BorderBrush="Transparent" />
+                
+                <materialDesign:PackIcon Grid.Column="2" Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Black" Margin="20 0 0 8"/>
+                <Label Grid.Column="2" Content="eBike" FontFamily="Arial" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="45 0 0 10" FontWeight="Medium"/>
+
+                <Border Grid.Column="3" CornerRadius="10" Margin="0 150 0 100">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/OnlineShopHighlightsContainer/CartBag.png"/>
+                    </Border.Background>
+                </Border>
+
+                <Label Grid.Column="3" Content="Golf Cartbag – Sport" FontFamily="Arial" Foreground="Black" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20 0 0 70" FontWeight="Semibold"/>
+                <Label Grid.Column="3" Content="Spacious cart bag made of waterproof nylon pocket." FontFamily="Arial" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20 0 0 45" FontWeight="Medium"/>
+                <Button
+                  Grid.Column="3"
+                  Command="{Binding OpenGCSPageCommand}"
+                  Width="30"
+                  Height="30"
+                  BorderThickness="2"
+                  Background="Transparent"
+                  HorizontalAlignment="Left"
+                  Margin="20 510 0 0"
+                  BorderBrush="Transparent" />
+                
+                <materialDesign:PackIcon Grid.Column="3" Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Black" Margin="20 0 0 8"/>
+                <Label Grid.Column="3" Content="eBike" FontFamily="Arial" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="45 0 0 10" FontWeight="Medium"/>
+
+            </Grid>
+
+            <materialDesign:PackIcon Foreground="Gray" Grid.Row="6" Kind="Circle" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-100 50 0 0"/>
+            <materialDesign:PackIcon Foreground="Gray" Grid.Row="6" Kind="Circle" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-50 50 0 0"/>
+            <materialDesign:PackIcon Foreground="Gray" Grid.Row="6" Kind="Circle" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 50 0 0"/>
+            <materialDesign:PackIcon Foreground="Gray" Grid.Row="6" Kind="Circle" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50 50 0 0"/>
+
+
+            <!--Home Stage Discover Containers -->
+
+            <Label Grid.Row="6" Content="Discover" Margin="0 100 0 0" Foreground="Black" FontSize="45" FontWeight="SemiBold" FontFamily="Arial" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" CornerRadius="20" Margin="200 200 0 400" >
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageDiscoverContainer/1.png" />
+                    </Border.Background>
+                </Border>
+
+                <Label Grid.Column="0" Content="Travel and Experience" Margin="230 550 0 0" Foreground="White" FontSize="20" FontWeight="Medium" FontFamily="Arial" HorizontalAlignment="Left"/>
+                <Button
+                   Grid.Column="0"
+                   Command="{Binding OpenTAEPageCommand}"
+                   Width="30"
+                   Height="30"
+                   BorderThickness="2"
+                   Background="Transparent"
+                   HorizontalAlignment="Left"
+                   Margin="530 120 0 0"
+                   BorderBrush="Transparent" />
+                <materialDesign:PackIcon Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Right" Foreground="White" Grid.Column="0" Margin="0 550 40 0"/>
+
+                <Border Grid.Column="1" CornerRadius="20" Margin="100 200 100 400">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageDiscoverContainer/2.png"/>
+                    </Border.Background>
+                </Border>
+
+                <Label Grid.Column="1" Content="Porsche Approved" Margin="130 550 0 0" Foreground="White" FontSize="20" FontWeight="Medium" FontFamily="Arial" HorizontalAlignment="Left"/>
+                <Button
+                   Grid.Column="1"
+                   Command="{Binding OpenPAPageCommand}"
+                   Width="30"
+                   Height="30"
+                   BorderThickness="2"
+                   Background="Transparent"
+                   HorizontalAlignment="Left"
+                   Margin="430 120 0 0"
+                   BorderBrush="Transparent" />
+                <materialDesign:PackIcon Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Right" Foreground="White" Grid.Column="1" Margin="0 550 140 0"/>
+
+                <Border Grid.Column="2" CornerRadius="20" Margin="0 200 200 400">
+                    <Border.Background>
+                        <ImageBrush ImageSource="../../../StaticFiles/Image/HomeStageDiscoverContainer/3.png"/>
+                    </Border.Background>
+                </Border>
+
+                <Label Grid.Column="2" Content="Motorsport Experience" Margin="30 550 0 0" Foreground="White" FontSize="20" FontWeight="Medium" FontFamily="Arial" HorizontalAlignment="Left"/>
+                <Button
+                  Grid.Column="2"
+                  Command="{Binding OpenMEPageCommand}"
+                  Width="30"
+                  Height="30"
+                  BorderThickness="2"
+                  Background="Transparent"
+                  HorizontalAlignment="Left"
+                  Margin="340 120 0 0"
+                  BorderBrush="Transparent" />
+
+                <materialDesign:PackIcon Kind="ChevronRight" Width="30" Height="30" HorizontalAlignment="Right" Foreground="White" Grid.Column="2" Margin="0 550 230 0"/>
+
+            </Grid>
+
+            <!--Home Stage Discover Containers -->
+
+            <Grid Grid.Row="7" Background="Black" Margin="0 -200 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="550"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="500"/>
+                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition Width="600"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" FontFamily="Arial" FontWeight="SemiBold" Content="Current Region / Language" Foreground="White" FontSize="23" Margin="100 50 0 0"/>
+                    <Label Grid.Column="0" FontFamily="Arial" FontWeight="Medium" Content="United States / English" Foreground="White" FontSize="20" Margin="130 90 0 0"/>
+                    <Label Grid.Column="0" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="350 90 0 0">
+                        <Hyperlink NavigateUri="" Foreground="White">Change</Hyperlink>
+                    </Label>
+
+                    <Border Grid.Column="0" Width="20" Height="20" Margin="0 0 270 340">
+                        <Border.Background>
+                            <ImageBrush ImageSource="../../../StaticFiles/Image/Flags/US.png"></ImageBrush>
+                        </Border.Background>
+                    </Border>
+
+                    <Label Grid.Column="0" FontFamily="Arial" FontWeight="SemiBold" Content="Newsletter" Foreground="White" FontSize="23" Margin="100 200 0 0"/>
+                    <Label Grid.Column="0" FontFamily="Arial" FontWeight="Medium" Content="Latest news directly in your inbox" Foreground="White" FontSize="20" Margin="100 230 0 0"/>
+
+                    <Button
+                         Command="{Binding showSubscribeCommand}"
+                         CommandParameter="{Binding ElementName=DashBoardPage}"
+                         Grid.Column="0"
+                         Width="380"
+                         Height="50"
+                         Background="White"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Center"
+                         Margin="80 70 0 0"
+                         Content="Subscribe"
+                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                         Style="{StaticResource MaterialDesignPaperLightButton}"
+                         BorderBrush="White" />
+
+                    <Label Grid.Column="0" FontFamily="Arial" FontWeight="SemiBold" Content="Company" Foreground="White" FontSize="23" Margin="100 380 0 0"/>
+                    <Label Grid.Column="0" FontFamily="Arial" FontWeight="Medium" Content="Porsche at a Glance" Foreground="White" FontSize="20" Margin="100 430 0 0"/>
+                    <Label Grid.Column="0" FontFamily="Arial" FontWeight="Medium" Content="Careers" Foreground="White" FontSize="20" Margin="100 460 0 0"/>
+                    <Label Grid.Column="0" FontFamily="Arial" FontWeight="Medium" Content="Press" Foreground="White" FontSize="20" Margin="100 490 0 0"/>
+
+                    <Label Grid.Column="1" FontFamily="Arial" FontWeight="SemiBold" Content="Contact" Foreground="White" FontSize="23" Margin="20 200 0 0"/>
+                    <Label Grid.Column="1" FontFamily="Arial" FontWeight="Medium" Content="Do you have any questions?" Foreground="White" FontSize="20" Margin="20 230 0 0"/>
+
+                    <Button
+                        Command="{Binding showContactFormCommand}"
+                        CommandParameter="{Binding ElementName=DashBoardPage}"
+                        Grid.Column="1"
+                        Width="380"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="25 70 0 0"
+                        Content="Contact Form"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" />
+
+                    <Label Grid.Column="1" FontFamily="Arial" FontWeight="Medium" Content="Porsche at a Glance" Foreground="White" FontSize="20" Margin="25 430 0 0"/>
+                    <Label Grid.Column="1" FontFamily="Arial" FontWeight="Medium" Content="Partner Forum" Foreground="White" FontSize="20" Margin="25 460 0 0"/>
+                    <Label Grid.Column="1" FontFamily="Arial" FontWeight="Medium" Content="Contact" Foreground="White" FontSize="20" Margin="25 490 0 0"/>
+
+                    <Label Grid.Column="2" FontFamily="Arial" FontWeight="SemiBold" Content="Social Media" Foreground="White" FontSize="23" Margin="20 200 0 0"/>
+                    <Label Grid.Column="2" FontFamily="Arial" FontWeight="Medium" Content="Get in touch with us via social media." Foreground="White" FontSize="20" Margin="20 230 0 0"/>
+
+                    <Button
+                         x:Name="FacebookBtn"
+                         Command="{Binding OpenFacebookPageCommand}"
+                         Grid.Column="2"
+                         Width="50"
+                         Height="50"
+                         Background="White"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Center"
+                         Margin="0 70 500 0"
+                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                         Style="{StaticResource MaterialDesignPaperLightButton}"
+                         BorderBrush="White" >
+                        <materialDesign:PackIcon Kind="Facebook" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+                    <Button
+                        x:Name="InstagramBtn"
+                        Command="{Binding OpenInstagramPageCommand}"
+                        Grid.Column="2"
+                        Width="50"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0 70 390 0"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" >
+                        <materialDesign:PackIcon Kind="Instagram" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Button>
+                    <Button
+                        x:Name="PinterestBtn"
+                        Command="{Binding OpenPinterestPageCommand}"
+                        Grid.Column="2"
+                        Width="50"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0 70 280 0"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" >
+                        <materialDesign:PackIcon Kind="Pinterest" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Button>
+                    <Button
+                        x:Name="YoutubeBtn"
+                        Command="{Binding OpenYoutubePageCommand}"
+                        Grid.Column="2"
+                        Width="50"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0 70 170 0"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" >
+                        <materialDesign:PackIcon Kind="Youtube" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Button>
+                    <Button
+                        x:Name="TwitterBtn"
+                        Command="{Binding OpenTwitterPageCommand}"
+                         Grid.Column="2"
+                         Width="50"
+                         Height="50"
+                         Background="White"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Center"
+                         Margin="0 70 60 0"
+                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                         Style="{StaticResource MaterialDesignPaperLightButton}"
+                         BorderBrush="White" >
+                        <materialDesign:PackIcon Kind="Twitter" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Button>
+                    <Button
+                        x:Name="LinkedinBtn"
+                        Command="{Binding OpenLinkedinPageCommand}"
+                        Grid.Column="2"
+                        Width="50"
+                        Height="50"
+                        Background="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0 70 -50 0"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignPaperLightButton}"
+                        BorderBrush="White" >
+                        <materialDesign:PackIcon Kind="Linkedin" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Button>
+
+                    <Label Grid.Column="2" FontFamily="Arial" FontWeight="Medium" Content="Sustainability" Foreground="White" FontSize="20" Margin="25 430 0 0"/>
+                    <Label Grid.Column="2" FontFamily="Arial" FontWeight="Medium" Content="Affiliates" Foreground="White" FontSize="20" Margin="25 460 0 0"/>
+
+                </Grid>
+
+                <Border Grid.Row="1" Background="Gray" Height="1" Margin="100 0 250 1000"/>
+
+                <Label Grid.Row="1" Content="© 2023 Porsche Cars North America, Inc." FontFamily="Arial" FontWeight="Medium" Foreground="White" FontSize="20" Margin="100 80 0 0"/>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="475 80 0 0">
+                    <Hyperlink Command="{Binding OpenLNPageCommand}" Foreground="White">Legal notice.</Hyperlink>
+                </Label>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="595 80 0 0">
+                    <Hyperlink Command="{Binding OpenPPPageCommand}" Foreground="White">Privacy notice.</Hyperlink>
+                </Label>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="730 80 0 0">
+                    <Hyperlink Command="{Binding OpenCPPageCommand}" Foreground="White">California Privacy.</Hyperlink>
+                </Label>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="895 80 0 0">
+                    <Hyperlink Command="{Binding OpenASPageCommand}" Foreground="White">Accessibility Statement.</Hyperlink>
+                </Label>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="1110 80 0 0">
+                    <Hyperlink Command="{Binding OpenOPSNPageCommand}" Foreground="White">Open Source Software Notice.</Hyperlink>
+                </Label>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="1030 110 0 0">
+                    <Hyperlink Command="{Binding OpenPIPageCommand}" Foreground="White">Do Not Sell or Share My Personal Information.</Hyperlink>
+                </Label>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="100 110 0 0">
+                    <Hyperlink Command="{Binding OpenWSPageCommand}" Foreground="White">Whistleblower System.</Hyperlink>
+                </Label>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="308 110 0 0">
+                    <Hyperlink Command="{Binding OpenERGPageCommand}" Foreground="White">Emergency Responder Guides.</Hyperlink>
+                </Label>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="590 110 0 0">
+                    <Hyperlink Command="{Binding OpenRIPageCommand}" Foreground="White">Recall Information.</Hyperlink>
+                </Label>
+                <Label Grid.Row="1" FontFamily="Arial" FontWeight="Medium" FontSize="20" Margin="760 110 0 0">
+                    <Hyperlink Command="{Binding Open3WTFPageCommand}" Foreground="White">3G Wireless Turndown FAQs.</Hyperlink>
+                </Label>
+
+                <Image Grid.Row="1" Source="../../../StaticFiles/Image/Icons/Porsche.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 200 0 0"/>
+
+            </Grid>
+
+        </Grid>
+    </ScrollViewer>
+</Page>

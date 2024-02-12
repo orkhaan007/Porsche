@@ -1,0 +1,350 @@
+﻿<Page x:Class="Porsche.Views.Pages.BuildYourPorschePages.BuildYourCayenneView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Porsche.Views.Pages.BuildYourPorschePages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      x:Name="BuildYourCayennePage"
+      
+      Title="Porsche ID">
+
+    <ScrollViewer>
+        <Grid Background="#eeeff2" Height="2000" Width="1800">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button
+Grid.Row="0"
+Command="{Binding DashBoaardPageCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+Width="220"
+Height="50"
+BorderThickness="2"
+Background="Transparent"
+VerticalAlignment="Top"
+HorizontalAlignment="Center"
+Margin="0 5 0 0"
+BorderBrush="Transparent" >
+            </Button>
+            <Image Grid.Row="0" Source="../../../StaticFiles/Image/Icons/PorscheBlack.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 25 0 0"/>
+            <Button
+Grid.Row="0"
+Command="{Binding ShowLoginPageCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+Width="50"
+Height="40"
+BorderThickness="2"
+Background="Transparent"
+VerticalAlignment="Top"
+HorizontalAlignment="Right"
+Margin="0 20 90 0"
+BorderBrush="Transparent" />
+            <materialDesign:PackIcon Kind="Account" Grid.Row="0" Foreground="Black" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 25 100 0"/>
+            <materialDesign:PackIcon Kind="Menu" Grid.Row="0" Foreground="Black" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90 25 0 0"/>
+            <Label Content="Menu" Grid.Row="0" Foreground="Black"  HorizontalAlignment="Left" FontSize="15" VerticalAlignment="Top" Margin="120 28 0 0" FontFamily="Arial" FontWeight="Medium"/>
+
+            <Label Grid.Row="1" Content="Select your favorite Porsche" FontFamily="Arial" FontWeight="SemiBold" Foreground="Black" FontSize="50" Margin="200 0 0 1500" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <TextBox
+Height="50"
+Width="300"
+Grid.Row="1"
+materialDesign:HintAssist.Hint="Insert Porsche Code"
+AcceptsReturn="True"
+IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+Style="{StaticResource MaterialDesignOutlinedTextBox}"
+TextWrapping="Wrap"
+VerticalScrollBarVisibility="Auto"
+HorizontalAlignment="Right"
+VerticalAlignment="Top"
+Margin="0 180 430 0" />
+
+            <Button
+  Command="{Binding openCayenneConfigurationCommand}"
+  CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+ Grid.Row="1"
+ Width="180"
+ Height="50"
+ Background="Black"
+ Foreground="White"
+ VerticalAlignment="Top"
+ HorizontalAlignment="Right" 
+ Margin="0 180 230 0"
+ Content="Open Configuration"
+ IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+ Style="{StaticResource MaterialDesignPaperLightButton}"
+ BorderBrush="Black" />
+
+            <Label Grid.Row="1" Content="SUV Models" FontFamily="Arial" FontWeight="SemiBold" Foreground="Black" FontSize="40" Margin="200 0 0 1200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <Grid Grid.Row="1" Margin="200 400 200 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="620"/>
+                    <RowDefinition Height="770"/>
+                    <RowDefinition Height="450"/>
+                    <RowDefinition Height="450"/>
+                    <RowDefinition Height="450"/>
+                    <RowDefinition Height="450"/>
+                    <RowDefinition Height="450"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Top">
+                        <Image Grid.Column="0" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="0" Content="Cayenne" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 220 0 0"/>
+                    <Label Grid.Column="0" Content="From $80,850*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 250 0 0"/>
+
+                    <Button
+      Grid.Column="0"
+      Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+      Width="30"
+      Height="30"
+      BorderThickness="2"
+      Background="Transparent"
+      HorizontalAlignment="Left"
+      Margin="406 0 0 110"
+      BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="0" Margin="0 250 35 0"/>
+
+
+
+                    <Border Grid.Column="1" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Top">
+                        <Image Grid.Column="1" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-E-Hybrid.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="1" Content="Cayenne E-Hybrid" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 220 0 0"/>
+                    <Label Grid.Column="1" Content="From $93,350*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 250 0 0"/>
+
+                    <Button
+      Grid.Column="1"
+            Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+      Width="30"
+      Height="30"
+      BorderThickness="2"
+      Background="Transparent"
+      HorizontalAlignment="Left"
+      Margin="406 0 0 110"
+      BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="1" Margin="0 250 35 0"/>
+
+
+                    <Border Grid.Column="2" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Top">
+                        <Image Grid.Column="2" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-S.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="2" Content="Cayenne S" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 220 0 0"/>
+                    <Label Grid.Column="2" Content="From $97,350*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 250 0 0"/>
+
+                    <Button
+      Grid.Column="2"
+            Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+      Width="30"
+      Height="30"
+      BorderThickness="2"
+      Background="Transparent"
+      HorizontalAlignment="Left"
+      Margin="406 0 0 110"
+      BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="2" Margin="0 250 35 0"/>
+
+                    <Border Grid.Column="0" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Bottom" Margin="0 0 0 0">
+                        <Image Grid.Column="0" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-S-E-Hybrid.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="0" Content="Cayenne S E-Hybrid" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 550 0 0"/>
+                    <Label Grid.Column="0" Content="From $100,750*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 580 0 0"/>
+
+                    <Button
+          Grid.Column="1"
+                Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+          Width="30"
+          Height="30"
+          BorderThickness="2"
+          Background="Transparent"
+          HorizontalAlignment="Left"
+          Margin="406 575 0 110"
+          BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="0" Margin="0 580 35 0"/>
+
+                    <Border Grid.Column="1" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Bottom" Margin="0 0 0 0">
+                        <Image Grid.Column="1" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-Turbo-E-Hybrid.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="1" Content="Cayenne Turbo E-Hybrid" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 550 0 0"/>
+                    <Label Grid.Column="1" Content="From $148,550*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 580 0 0"/>
+
+                    <Button
+          Grid.Column="1"
+                Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+          Width="30"
+          Height="30"
+          BorderThickness="2"
+          Background="Transparent"
+          HorizontalAlignment="Left"
+          Margin="406 575 0 110"
+          BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="0" Margin="0 580 35 0"/>
+
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Content="Coupé Models" FontFamily="Arial" FontWeight="SemiBold" Foreground="Black" FontSize="40" Margin="0 60 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+                    <Border Grid.Column="0" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Top" Margin="0 150 0 0">
+                        <Image Grid.Column="0" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-Coupe.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="0" Content="Cayenne Coupe" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 370 0 0"/>
+                    <Label Grid.Column="0" Content="From $85,950*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 400 0 0"/>
+
+                    <Button
+      Grid.Column="0"
+            Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+      Width="30"
+      Height="30"
+      BorderThickness="2"
+      Background="Transparent"
+      HorizontalAlignment="Left"
+      Margin="406 300 0 110"
+      BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="0" Margin="0 400 35 0"/>
+
+
+
+                    <Border Grid.Column="1" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Top" Margin="0 150 0 0">
+                        <Image Grid.Column="1" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-E-Hybrid-Coupe.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="1" Content="Cayenne E-Hybrid Coupe" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 370 0 0"/>
+                    <Label Grid.Column="1" Content="From $97,350*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 400 0 0"/>
+
+                    <Button
+        Grid.Column="1"
+              Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+        Width="30"
+        Height="30"
+        BorderThickness="2"
+        Background="Transparent"
+        HorizontalAlignment="Left"
+        Margin="406 300 0 110"
+        BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="1" Margin="0 400 35 0"/>
+
+
+                    <Border Grid.Column="2" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Top" Margin="0 150 0 0">
+                        <Image Grid.Column="2" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-S-Coupe.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="2" Content="Cayenne S Coupe" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 370 0 0"/>
+                    <Label Grid.Column="2" Content="From $103,750*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 400 0 0"/>
+
+                    <Button
+     Grid.Column="2"
+           Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+     Width="30"
+     Height="30"
+     BorderThickness="2"
+     Background="Transparent"
+     HorizontalAlignment="Left"
+     Margin="406 300 0 110"
+     BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="2" Margin="0 400 35 0"/>
+
+                    <Border Grid.Column="0" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Bottom" Margin="0 0 0 0">
+                        <Image Grid.Column="0" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-S-E-Hybrid-Coupe.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="0" Content="Cayenne S E-Hybrid Coupe" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 690 0 0"/>
+                    <Label Grid.Column="0" Content="From $106,050*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 720 0 0"/>
+
+                    <Button
+        Grid.Column="0"
+              Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+        Width="30"
+        Height="30"
+        BorderThickness="2"
+        Background="Transparent"
+        HorizontalAlignment="Left"
+        Margin="406 715 0 110"
+        BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="0" Margin="0 720 35 0"/>
+
+                    <Border Grid.Column="1" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Bottom" Margin="0 0 0 0">
+                        <Image Grid.Column="1" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-Turbo-GT.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="1" Content="Cayenne Turbo GT" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 690 0 0"/>
+                    <Label Grid.Column="1" Content="From $197,950*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 720 0 0"/>
+
+                    <Button
+            Grid.Column="1"
+                  Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+            Width="30"
+            Height="30"
+            BorderThickness="2"
+            Background="Transparent"
+            HorizontalAlignment="Left"
+            Margin="406 715 0 110"
+            BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="1" Margin="0 720 35 0"/>
+
+                    <Border Grid.Column="2" Background="White" Width="450" Height="300" CornerRadius="10" VerticalAlignment="Bottom" Margin="0 0 0 0">
+                        <Image Grid.Column="2" Source="../../../StaticFiles/Image/CarSelectorPageImages/Cayenne/Cayenne-Turbo-E-Hybrid-Coupe.png" Margin="0 0 0 50"/>
+                    </Border>
+
+                    <Label Grid.Column="2" Content="Cayenne Turbo E-Hybrid Coupe" FontFamily="Arial" FontWeight="SemiBold" FontSize="22" Foreground="Black" Margin="40 690 0 0"/>
+                    <Label Grid.Column="2" Content="From $153,050*" FontFamily="Arial" FontWeight="Medium" FontSize="15" Margin="40 720 0 0"/>
+
+                    <Button
+          Grid.Column="2"
+                Command="{Binding openCayenneConfigurationCommand}"
+CommandParameter="{Binding ElementName=BuildYourCayennePage}"
+          Width="30"
+          Height="30"
+          BorderThickness="2"
+          Background="Transparent"
+          HorizontalAlignment="Left"
+          Margin="406 715 0 110"
+          BorderBrush="Transparent" />
+                    <materialDesign:PackIcon Kind="ChevronRight" Width="20" Height="20" HorizontalAlignment="Right" Foreground="Black" Grid.Column="2" Margin="0 720 35 0"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Page>

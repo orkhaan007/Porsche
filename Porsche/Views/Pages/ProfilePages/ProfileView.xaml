@@ -1,0 +1,265 @@
+﻿<Page x:Class="Porsche.Views.Pages.ProfilePages.ProfileView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Porsche.Views.Pages.ProfilePages"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      x:Name="ProfilePage"
+      Title="Porsche ID">
+
+    <Grid Background="White" Height="1010" Width="1800">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button
+   Grid.Row="0"
+   Command="{Binding DashBoaardPageCommand}"
+   CommandParameter="{Binding ElementName=ProfilePage}"
+   Width="220"
+   Height="50"
+   BorderThickness="2"
+   Background="Transparent"
+   VerticalAlignment="Top"
+   HorizontalAlignment="Center"
+   Margin="0 5 0 0"
+   BorderBrush="Transparent" >
+        </Button>
+        <Image Grid.Row="0" Source="../../../StaticFiles/Image/Icons/PorscheBlack.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 25 0 0"/>
+        <Button
+  Grid.Row="0"
+  Command="{Binding ShowLoginPageCommand}"
+  CommandParameter="{Binding ElementName=ProfilePage}"
+  Width="50"
+  Height="40"
+  BorderThickness="2"
+  Background="Transparent"
+  VerticalAlignment="Top"
+  HorizontalAlignment="Right"
+  Margin="0 20 90 0"
+  BorderBrush="Transparent" />
+        <materialDesign:PackIcon Kind="Account" Grid.Row="0" Foreground="Black" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 25 100 0"/>
+        <materialDesign:PackIcon Kind="Menu" Grid.Row="0" Foreground="Black" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90 25 0 0"/>
+        <Label Content="Menu" Grid.Row="0" Foreground="Black"  HorizontalAlignment="Left" FontSize="15" VerticalAlignment="Top" Margin="120 28 0 0" FontFamily="Arial" FontWeight="Medium"/>
+
+        <Label Grid.Row="1" Content="Your questions and comments are important to us! Please use the form below to send us an email, and note that the" FontFamily="Arial" FontWeight="Medium" Foreground="Black" FontSize="13" Margin="100,23,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Grid.Row="1" Content="more information you provide, the better we can serve you." FontFamily="Arial" FontWeight="Medium" Foreground="Black" FontSize="13" Margin="100,43,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Grid.Row="1" Content="Your Cars" FontFamily="Arial" FontWeight="SemiBold" Foreground="Black" FontSize="13" Margin="100,77,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <ListView Grid.Row="1" Margin="100,372,1250,328" ItemsSource="{Binding ServiceRecords}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding ServiceDate}" Header="Date" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ServiceType}" Header="Type" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Cost}" Header="Cost"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Grid.Row="1" Content="Your Service Records" FontFamily="Arial" FontWeight="SemiBold" Foreground="Black" FontSize="13" Margin="100,317,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <ListView Grid.Row="1" Margin="90,111,1260,614" ItemsSource="{Binding CarList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Model}" Header="Model"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Color}" Header="Color" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Seats}" Header="Seats" />
+                    <GridViewColumn DisplayMemberBinding="{Binding TotalPrice}" Header="Price" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Grid.Row="1" Content="Your Insurance Policy" FontFamily="Arial" FontWeight="SemiBold" Foreground="Black" FontSize="13" Margin="100,630,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20"/>
+
+        <ListView Grid.Row="1" Margin="100,674,1250,26" ItemsSource="{Binding InsurancePolicies}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding InsuranceCompany}" Header="Company"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding StartDate}" Header="Start Date" />
+                    <GridViewColumn DisplayMemberBinding="{Binding EndDate}" Header="End Date" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Premium}" Header="Premium" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <Label Grid.Row="1" Content="Change Personal Details" FontFamily="Arial" FontWeight="SemiBold" Foreground="Black" FontSize="13" Margin="800 100 0 500" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <TextBox
+ Grid.Row="1"
+ Height="50"
+ Width="250"
+ Grid.Column="1"
+ materialDesign:HintAssist.Hint="Salutation *"
+ AcceptsReturn="True"
+ IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+ Style="{StaticResource MaterialDesignOutlinedTextBox}"
+ TextWrapping="Wrap"
+ VerticalScrollBarVisibility="Auto" 
+ HorizontalAlignment="Left"
+ VerticalAlignment="Top"
+ Margin="800 150 0 0"
+ Text="{Binding Salutation, Mode=TwoWay}"/>
+
+        <TextBox
+Grid.Row="1"
+Height="50"
+Width="250"
+Grid.Column="1"
+materialDesign:HintAssist.Hint="Title *"
+AcceptsReturn="True"
+IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+Style="{StaticResource MaterialDesignOutlinedTextBox}"
+TextWrapping="Wrap"
+VerticalScrollBarVisibility="Auto" 
+HorizontalAlignment="Left"
+VerticalAlignment="Top"
+Margin="1080 150 0 0"
+Text="{Binding Title, Mode=TwoWay}"/>
+
+        <TextBox
+         Grid.Row="1"
+         Height="50"
+         Width="250"
+         Grid.Column="1"
+         materialDesign:HintAssist.Hint="First name *"
+         AcceptsReturn="True"
+         IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+         TextWrapping="Wrap"
+         VerticalScrollBarVisibility="Auto" 
+         HorizontalAlignment="Left"
+         VerticalAlignment="Top"
+         Margin="800 220 0 0" 
+         Text="{Binding FirstName, Mode=TwoWay}"/>
+
+        <TextBox
+        Grid.Row="1"
+        Height="50"
+        Width="120"
+        Grid.Column="1"
+        materialDesign:HintAssist.Hint="Middle Initial"
+        AcceptsReturn="True"
+        IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+        Style="{StaticResource MaterialDesignOutlinedTextBox}"
+        TextWrapping="Wrap"
+        VerticalScrollBarVisibility="Auto" 
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Margin="1080 220 0 0" 
+        Text="{Binding MiddleInitial, Mode=TwoWay}"/>
+
+        <TextBox
+          Grid.Row="1"
+          Height="50"
+          Width="250"
+          Grid.Column="1"
+          materialDesign:HintAssist.Hint="Last name *"
+          AcceptsReturn="True"
+          IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+          Style="{StaticResource MaterialDesignOutlinedTextBox}"
+          TextWrapping="Wrap"
+          VerticalScrollBarVisibility="Auto" 
+          HorizontalAlignment="Left"
+          VerticalAlignment="Top"
+          Margin="800 300 0 0" 
+          Text="{Binding LastName, Mode=TwoWay}"/>
+
+        <TextBox
+         Grid.Row="1"
+         Height="50"
+         Width="120"
+         Grid.Column="1"
+         materialDesign:HintAssist.Hint="Suffix"
+         AcceptsReturn="True"
+         IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+         TextWrapping="Wrap"
+         VerticalScrollBarVisibility="Auto" 
+         HorizontalAlignment="Left"
+         VerticalAlignment="Top"
+         Margin="1080 300 0 0" 
+         Text="{Binding Suffix, Mode=TwoWay}"/>
+
+        <TextBox
+         Grid.Row="1"
+         Height="50"
+         Width="530"
+         Grid.Column="1"
+         materialDesign:HintAssist.Hint="Email *"
+         AcceptsReturn="True"
+         IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+         TextWrapping="Wrap"
+         VerticalScrollBarVisibility="Auto" 
+         HorizontalAlignment="Left"
+         VerticalAlignment="Top"
+         Margin="800 380 0 0" 
+         Text="{Binding Email, Mode=TwoWay}"/>
+
+        <TextBox
+        Grid.Row="1"
+        Height="50"
+        Width="530"
+        Grid.Column="1"
+        materialDesign:HintAssist.Hint="Password"
+        AcceptsReturn="True"
+        IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+        Style="{StaticResource MaterialDesignOutlinedTextBox}"
+        TextWrapping="Wrap"
+        VerticalScrollBarVisibility="Auto" 
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Margin="800 460 0 0" 
+        Text="{Binding Password, Mode=TwoWay}"/>
+
+        <Label Grid.Row="1" Content="* Mandatory fields" FontFamily="Arial" FontWeight="Medium" Foreground="Black" FontSize="10" Margin="800 550 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <Button
+    Command="{Binding ChangePersonalDetailsSubmitCommand}"
+    CommandParameter="{Binding ElementName=ProfilePage}"
+    Grid.Row="1"
+    Width="200"
+    Height="50"
+    Background="Black"
+    Foreground="White"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left" 
+    Margin="1130 230 0 0"
+    Content="Submit"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+    Style="{StaticResource MaterialDesignPaperLightButton}"
+    BorderBrush="Black" />
+
+
+        <Button
+Command="{Binding ExitCommand}"
+CommandParameter="{Binding ElementName=ProfilePage}"
+Grid.Row="0"
+Width="30"
+Height="30"
+Background="White"
+Foreground="White"
+VerticalAlignment="Top"
+HorizontalAlignment="Left" 
+Margin="1726,23,0,0"
+Content=""
+IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+Style="{StaticResource MaterialDesignPaperLightButton}"
+BorderBrush="White" />
+
+        <materialDesign:PackIcon Grid.Row="0" Kind="ExitToApp" Margin="1729,26,0,0" Foreground="Black" Width="24" Height="24"/>
+
+    </Grid>
+</Page>

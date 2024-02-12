@@ -1,0 +1,201 @@
+﻿<Page x:Class="Porsche.Views.Pages.ConstructYourPorschePages.ConstructYourTaycanView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Porsche.Views.Pages.ConstructYourPorschePages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      x:Name="ConstructYourTaycanPage"
+      
+      Title="Porsche Construct">
+
+    <ScrollViewer>
+        <Grid Background="White" Height="1010" Width="1800">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button
+       Grid.Row="0"
+       Command="{Binding DashBoaardPageCommand}"
+       CommandParameter="{Binding ElementName=ConstructYourTaycanPage}"
+       Width="220"
+       Height="50"
+       BorderThickness="2"
+       Background="Transparent"
+       VerticalAlignment="Top"
+       HorizontalAlignment="Center"
+       Margin="0 5 0 0"
+       BorderBrush="Transparent" >
+            </Button>
+            <Image Grid.Row="0" Source="../../../StaticFiles/Image/Icons/PorscheBlack.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 25 0 0"/>
+            <Button
+      Grid.Row="0"
+      Command="{Binding ShowLoginPageCommand}"
+      CommandParameter="{Binding ElementName=ConstructYourTaycanPage}"
+      Width="50"
+      Height="40"
+      BorderThickness="2"
+      Background="Transparent"
+      VerticalAlignment="Top"
+      HorizontalAlignment="Right"
+      Margin="0 20 90 0"
+      BorderBrush="Transparent" />
+            <materialDesign:PackIcon Kind="Account" Grid.Row="0" Foreground="Black" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 25 100 0"/>
+            <materialDesign:PackIcon Kind="Menu" Grid.Row="0" Foreground="Black" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90 25 0 0"/>
+            <Label Content="Menu" Grid.Row="0" Foreground="Black"  HorizontalAlignment="Left" FontSize="15" VerticalAlignment="Top" Margin="120 28 0 0" FontFamily="Arial" FontWeight="Medium"/>
+
+            <Label Grid.Row="1" Content="Panamera" FontFamily="Arial" FontWeight="SemiBold" Foreground="Black" FontSize="25" Margin="100 60 0 500" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+            <Grid Grid.Row="1" Margin="0 100 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1200"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="700"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Image Source="../../../StaticFiles/Image/CarConstructerPageImages/Taycan/Taycan_1.jpg" Width="1200" HorizontalAlignment="Center" VerticalAlignment="Top" Height="650" Margin="0,27,0,0"/>
+                    <Image Grid.Row="1" Source="../../../StaticFiles/Image/CarConstructerPageImages/Taycan/Taycan_2.jpg" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Margin="30 10 0 0"/>
+                    <Image Grid.Row="1" Source="../../../StaticFiles/Image/CarConstructerPageImages/Taycan/Taycan_3.jpg" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Margin="200 10 0 0"/>
+                    <Image Grid.Row="1" Source="../../../StaticFiles/Image/CarConstructerPageImages/Taycan/Taycan_4.jpg" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Margin="370 10 0 0"/>
+                    <Image Grid.Row="1" Source="../../../StaticFiles/Image/CarConstructerPageImages/Taycan/Taycan_5.jpg" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Margin="540 10 0 0"/>
+                    <Image Grid.Row="1" Source="../../../StaticFiles/Image/CarConstructerPageImages/Taycan/Taycan_6.jpg" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Margin="710 10 0 0"/>
+                    <Image Grid.Row="1" Source="../../../StaticFiles/Image/CarConstructerPageImages/Taycan/Taycan_7.jpg" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Margin="880 10 0 0"/>
+                    <Image Grid.Row="1" Source="../../../StaticFiles/Image/CarConstructerPageImages/Taycan/Taycan_8.jpg" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Margin="1050 10 0 0"/>
+
+                </Grid>
+
+                <ComboBox materialDesign:HintAssist.Hint="Exterior Colors" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450" Height="50" Margin="0 100 0 0" Foreground="Black" Padding="10" BorderBrush="Black" SelectedValue="{Binding Color, Mode=TwoWay}">>
+                    <ComboBoxItem
+        Content="White" />
+                    <ComboBoxItem
+        Content="Guards Red" />
+                    <ComboBoxItem
+        Content="Racing Yellow" />
+                    <ComboBoxItem
+         Content="Jet Black Metallic" />
+                    <ComboBoxItem
+         Content="GT Silver Metallic" />
+                    <ComboBoxItem
+         Content="Agate Grey Metallic" />
+                    <ComboBoxItem
+         Content="Gentian Blue Metallic" />
+                    <ComboBoxItem
+         Content="Aventurine Green Metallic" />
+                    <ComboBoxItem
+        Content="Carmine Red" />
+                    <ComboBoxItem
+        Content="Ice Grey Metallic" />
+                    <ComboBoxItem
+        Content="Arctic Grey" />
+                    <ComboBoxItem
+        Content="Shark Blue" />
+                    <ComboBoxItem
+        Content="Chalk" />
+                    <ComboBoxItem
+        Content="Ruby Star Neo" />
+                </ComboBox>
+
+                <ComboBox materialDesign:HintAssist.Hint="Wheels" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450" Height="50" Margin="0 200 0 0" Foreground="Black" Padding="10" BorderBrush="Black" SelectedValue="{Binding Wheel, Mode=TwoWay}">
+                    <ComboBoxItem
+Content="18 Boxster Wheels" />
+                    <ComboBoxItem
+Content="18 Cayman Wheels" />
+                    <ComboBoxItem
+Content="19 Boxster S Wheels" />
+                    <ComboBoxItem
+ Content="20 Carrera Sport Wheels" />
+                    <ComboBoxItem
+ Content="20 Carrera S Wheels" />
+                    <ComboBoxItem
+ Content="20 911 Turbo Wheels" />
+                </ComboBox>
+
+                <ComboBox materialDesign:HintAssist.Hint="Wheel Colors" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450" Height="50" Margin="0 300 0 0" Foreground="Black" Padding="10" BorderBrush="Black" SelectedValue="{Binding WheelColor, Mode=TwoWay}">
+                    <ComboBoxItem
+Content="Wheels Painted in Satin Platinum" />
+                    <ComboBoxItem
+Content="Wheels Painted in Satin Black" />
+                    <ComboBoxItem
+Content="Wheels Painted in Jet Black Metallic" />
+                    <ComboBoxItem
+ Content="Wheels Painted in High Gloss Black" />
+                    <ComboBoxItem
+ Content="Wheels Painted in Exterior Color" />
+                </ComboBox>
+
+                <ComboBox materialDesign:HintAssist.Hint="Interior Colors" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450" Height="50" Margin="0 400 0 0" Foreground="Black" Padding="10" BorderBrush="Black" SelectedValue="{Binding InteriorLeather, Mode=TwoWay}">
+                    <ComboBoxItem
+Content="Standard Interior in Black" />
+                    <ComboBoxItem
+Content="Standard Interior in Agate Grey" />
+                    <ComboBoxItem
+Content="Standard Interior in Black i.c.w. Leather Sport Seats Plus" />
+                    <ComboBoxItem
+ Content="Standard Interior in Agate Grey i.c.w. Leather Sport Seats Plus" />
+                    <ComboBoxItem
+ Content="Standard Interior in Black/Bordeaux Red with Leather Package i.c.w. Sport Seats" />
+                    <ComboBoxItem
+Content="Natural Leather Interior in Espresso/Cognac" />
+                </ComboBox>
+
+                <ComboBox materialDesign:HintAssist.Hint="Seats" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450" Height="50" Margin="0 500 0 0" Foreground="Black" Padding="10" BorderBrush="Black" SelectedValue="{Binding Seats, Mode=TwoWay}">
+                    <ComboBoxItem
+Content="Sport Seats (2-way)" />
+                    <ComboBoxItem
+Content="Power Sport Seats (14-way) with Memory Package" />
+                    <ComboBoxItem
+Content="Standard Interior in Black i.c.w. Leather Sport Seats Plus" />
+                    <ComboBoxItem
+ Content="Sport Seats Plus (2-way)" />
+                    <ComboBoxItem
+ Content="Adaptive Sport Seats Plus (18-way) with Memory Package" />
+                </ComboBox>
+
+                <StackPanel Grid.Column="1" Margin="70 580 350 100" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <CheckBox Grid.Row="1" materialDesign:CheckBoxAssist.CheckBoxSize="20" Content="Lights And Vision" IsChecked="{Binding LightsAndVision, Mode=TwoWay}"/>
+                    <CheckBox Grid.Row="1" materialDesign:CheckBoxAssist.CheckBoxSize="20" Content="Exterior Decals And Logos" IsChecked="{Binding ExteriorDecalsAndLogos, Mode=TwoWay}"/>
+                    <CheckBox Grid.Row="1" materialDesign:CheckBoxAssist.CheckBoxSize="20" Content="Exterior Packages" IsChecked="{Binding ExteriorPackages, Mode=TwoWay}"/>
+                    <CheckBox Grid.Row="1" materialDesign:CheckBoxAssist.CheckBoxSize="20" Content="Assistance Systems" IsChecked="{Binding AssistanceSystems, Mode=TwoWay}"/>
+                    <CheckBox Grid.Row="1" materialDesign:CheckBoxAssist.CheckBoxSize="20" Content="Interior Comfort" IsChecked="{Binding InteriorComfort, Mode=TwoWay}"/>
+                    <CheckBox Grid.Row="1" materialDesign:CheckBoxAssist.CheckBoxSize="20" Content="Audio And Communication" IsChecked="{Binding AudioAndCommunication, Mode=TwoWay}"/>
+                </StackPanel>
+
+                <Label Grid.Column="1" FontFamily="Arial" FontWeight="SemiBold" Content="Total Price:" FontSize="20" VerticalAlignment="Bottom" Margin="70 0 0 35"/>
+                <Label Grid.Column="1" FontFamily="Arial" FontWeight="Medium" Content="{Binding TotalPrice, UpdateSourceTrigger=PropertyChanged}" FontSize="15" VerticalAlignment="Bottom" Margin="190 0 0 38"/>
+
+                <Button
+               Command="{Binding AddSaleTaycanCommand}"
+               CommandParameter="{Binding ElementName=ConstructYourTaycanPage}"
+               Grid.Column="1"
+               Width="130"
+               Height="50"
+               Background="Black"
+               Foreground="White"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Left" 
+               Margin="400 700 0 0"
+               Content="Contact dealer"
+               IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+               Style="{StaticResource MaterialDesignPaperLightButton}"
+               BorderBrush="Black" />
+
+
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Page>

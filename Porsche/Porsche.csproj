@@ -1,0 +1,681 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="StaticFiles\Audio\**" />
+    <EmbeddedResource Remove="StaticFiles\Audio\**" />
+    <None Remove="StaticFiles\Audio\**" />
+    <Page Remove="StaticFiles\Audio\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\718\718_1.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\718\718_2.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\718\718_4.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\718\718_5.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\718\718_6.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\718\718_7.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\718\718_8.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\911\911_1.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\911\911_2.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\911\911_3.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\911\911_4.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\911\911_5.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\911\911_6.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\911\911_7.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\911\911_8.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_1.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_2.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_3.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_4.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_5.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_6.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_7.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_8.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_1.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_2.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_3.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_4.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_5.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_6.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_7.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_8.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_1.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_2.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_3.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_4.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_5.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_6.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_7.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_8.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_1.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_2.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_3.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_4.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_5.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_6.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_7.jpg" />
+    <None Remove="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_8.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster-GTS-4.0.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster-GTS-4.0.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster-S.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster-S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster-Style-Edition.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster-Style-Edition.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-GT4-RS.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-GT4-RS.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-GTS-4.0.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-GTS-4.0.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-S.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-Style-Edition.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-Style-Edition.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Spyder-RS.jpg" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\718\718-Spyder-RS.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4-Cabriolet.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4-GTS-Cabriolet.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4-GTS.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4S-Cabriolet.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-Cabriolet.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-GTS-Cabriolet.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-GTS.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-S-Cabriolet.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-T.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Dakar.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Edition-50-Years-Porsche-Design.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-GT3-RS.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-GT3-with-Touring-Package.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-GT3.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-ST.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Targa-4-GTS.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Targa-4.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Targa-4S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Turbo-Cabriolet.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Turbo-S-Cabriolet.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Turbo-S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\911\911-Turbo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-Coupe.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-E-Hybrid-Coupe.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-E-Hybrid.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-S-Coupe.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-S-E-Hybrid-Coupe.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-S-E-Hybrid.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-Turbo-E-Hybrid-Coupe.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-Turbo-E-Hybrid.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-Turbo-GT.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Macan\Macan-GTS.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Macan\Macan-S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Macan\Macan-T.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Macan\Macan.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-E-Hybrid-Executive.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-E-Hybrid-Platinum-Edition.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-E-Hybrid-Sport-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-E-Hybrid.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-Executive.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-Platinum-Edition.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-Sport-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-E-Hybrid-Executive.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-E-Hybrid-Sport-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-E-Hybrid.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-Executive.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-Sport-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-GTS-Sport-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-GTS.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-E-Hybrid-Executive.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-E-Hybrid-Sport-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-E-Hybrid.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-Executive.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-Sport-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-4-Cross-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-4S-Cross-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-4S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-GTS-Sport-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-GTS.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-Turbo-Cross-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-Turbo-S-Cross-Turismo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-Turbo-S.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-Turbo.png" />
+    <None Remove="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan.png" />
+    <None Remove="StaticFiles\Image\FindYourNewOrPreOwnedPorscheContainer\FindYourNewOrPreOwnedPorsche.png" />
+    <None Remove="StaticFiles\Image\FindYourPorscheCenterContainer\FindYourPorschCenter.png" />
+    <None Remove="StaticFiles\Image\Flags\US.png" />
+    <None Remove="StaticFiles\Image\HomeStageDiscoverContainer\1.png" />
+    <None Remove="StaticFiles\Image\HomeStageDiscoverContainer\2.png" />
+    <None Remove="StaticFiles\Image\HomeStageDiscoverContainer\3.png" />
+    <None Remove="StaticFiles\Image\HomeStageImageContainer\1.png" />
+    <None Remove="StaticFiles\Image\HomeStageImageContainer\2.png" />
+    <None Remove="StaticFiles\Image\HomeStageImageContainer\3.png" />
+    <None Remove="StaticFiles\Image\HomeStageModelsContainer\718.png" />
+    <None Remove="StaticFiles\Image\HomeStageModelsContainer\911.png" />
+    <None Remove="StaticFiles\Image\HomeStageModelsContainer\Cayenne.png" />
+    <None Remove="StaticFiles\Image\HomeStageModelsContainer\Macan.png" />
+    <None Remove="StaticFiles\Image\HomeStageModelsContainer\Panamera.png" />
+    <None Remove="StaticFiles\Image\HomeStageModelsContainer\Taycan.png" />
+    <None Remove="StaticFiles\Image\Icons\background.jpg" />
+    <None Remove="StaticFiles\Image\Icons\Porsche.png" />
+    <None Remove="StaticFiles\Image\Icons\PorscheBlack.png" />
+    <None Remove="StaticFiles\Image\Icons\PorscheIcon.ico" />
+    <None Remove="StaticFiles\Image\OnlineShopHighlightsContainer\CartBag.png" />
+    <None Remove="StaticFiles\Image\OnlineShopHighlightsContainer\EBike.png" />
+    <None Remove="StaticFiles\Image\OnlineShopHighlightsContainer\WallCharger.png" />
+    <None Remove="StaticFiles\Image\OnlineShopHighlightsContainer\Watch.png" />
+    <None Remove="StaticFiles\Image\Porsche.png" />
+    <None Remove="StaticFiles\Videos\Porsche Taycan Turbo S.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\718\718_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\718\718_2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\718\718_4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\718\718_5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\718\718_6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\718\718_7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\718\718_8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\911\911_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\911\911_2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\911\911_3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\911\911_4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\911\911_5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\911\911_6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\911\911_7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\911\911_8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Cayenne\Cayenne_8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Macan\Macan_8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Panamera\Panamera_8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarConstructerPageImages\Taycan\Taycan_8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster-GTS-4.0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster-S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster-Style-Edition.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Boxster.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-GT4-RS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-GTS-4.0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman-Style-Edition.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Cayman.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\718\718-Spyder-RS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4-Cabriolet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4-GTS-Cabriolet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4-GTS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4S-Cabriolet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-4S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-Cabriolet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-GTS-Cabriolet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-GTS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-S-Cabriolet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera-T.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Carrera.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Dakar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Edition-50-Years-Porsche-Design.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-GT3-RS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-GT3-with-Touring-Package.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-GT3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-ST.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Targa-4-GTS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Targa-4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Targa-4S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Turbo-Cabriolet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Turbo-S-Cabriolet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Turbo-S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\911\911-Turbo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-Coupe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-E-Hybrid-Coupe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-E-Hybrid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-S-Coupe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-S-E-Hybrid-Coupe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-S-E-Hybrid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-Turbo-E-Hybrid-Coupe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-Turbo-E-Hybrid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne-Turbo-GT.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Cayenne\Cayenne.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Macan\Macan-GTS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Macan\Macan-S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Macan\Macan-T.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Macan\Macan.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-E-Hybrid-Executive.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-E-Hybrid-Platinum-Edition.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-E-Hybrid-Sport-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-E-Hybrid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-Executive.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-Platinum-Edition.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4-Sport-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-E-Hybrid-Executive.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-E-Hybrid-Sport-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-E-Hybrid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-Executive.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S-Sport-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-4S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-GTS-Sport-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-GTS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-E-Hybrid-Executive.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-E-Hybrid-Sport-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-E-Hybrid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-Executive.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S-Sport-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Panamera\Panamera-Turbo-S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-4-Cross-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-4S-Cross-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-4S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-GTS-Sport-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-GTS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-Turbo-Cross-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-Turbo-S-Cross-Turismo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-Turbo-S.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan-Turbo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\CarSelectorPageImages\Taycan\Taycan.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\Flags\US.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageDiscoverContainer\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageDiscoverContainer\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageDiscoverContainer\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\Icons\background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\Icons\Porsche.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\Icons\PorscheBlack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\OnlineShopHighlightsContainer\CartBag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="StaticFiles\Image\FindYourNewOrPreOwnedPorscheContainer\FindYourNewOrPreOwnedPorsche.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\FindYourPorscheCenterContainer\FindYourPorschCenter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageImageContainer\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageImageContainer\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageModelsContainer\718.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageModelsContainer\Cayenne.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageModelsContainer\Macan.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageModelsContainer\Panamera.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\HomeStageModelsContainer\Taycan.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\Icons\PorscheIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\OnlineShopHighlightsContainer\EBike.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\OnlineShopHighlightsContainer\WallCharger.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Image\OnlineShopHighlightsContainer\Watch.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticFiles\Videos\Porsche Taycan Turbo S.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="StaticFiles\Image\HomeStageImageContainer\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="StaticFiles\Image\HomeStageModelsContainer\911.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.26">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Maps.MapControl.WPF" Version="1.0.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="6.0.1" />
+    <PackageReference Include="SimpleInjector" Version="5.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccsess\DataAccsess.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppSettings\appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
