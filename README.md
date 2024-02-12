@@ -2,7 +2,7 @@
 
 Welcome to the Porsche Explorer Project!
 
-Explore the world of Porsche with our WPF-based application, where you can discover, customize, and stay updated on your favorite Porsche models.
+Explore the world of Porsche with our WPF-based & EF Core application, where you can discover, customize, and stay updated on your favorite Porsche models.
 
 ## Features
 
@@ -13,23 +13,32 @@ Explore the world of Porsche with our WPF-based application, where you can disco
 - **Database Integration:** Utilizes a database to store user information and preferences.
 - **Email Notifications:** Stay informed with email updates using the SMTP protocol.
 
+## NuGet Packages
+
+This project utilizes the following NuGet packages:
+
+- Entity Framework Core
+- Entity Framework Tools
+- Entity Framework SQL Server
+- Microsoft.Extensions.Configuration.Json
+- Microsoft.EntityFrameworkCore.Design
+- Microsoft.EntityFrameworkCore.Proxies
+
 ## Getting Started
 
 ### Prerequisites
 
 - [Visual Studio](https://visualstudio.microsoft.com/) installed
 - [NuGet Package Manager](https://www.nuget.org/) for package dependencies
-- [.NET](https://dotnet.microsoft.com/en-us/download) for .net framework
+- [.NET](https://dotnet.microsoft.com/en-us/download) for .NET Framework
 
 ### Installation
 
-### Installation
-
-1. Clone the repository: `git clone https://github.com/Orkhaann/Porsche-.git`
+1. Clone the repository: `git clone https://github.com/Orkhaann/Porsche.git`
 2. Open the project in Visual Studio.
 3. Update App Settings:
    - Navigate to the `appsettings.json` file in the project.
-   - Modify the values in the section according to your smtp configuration.
+   - Modify the values in the section according to your SMTP configuration.
 
      Example `appsettings.json`:
      ```json
@@ -42,6 +51,18 @@ Explore the world of Porsche with our WPF-based application, where you can disco
        "RecipientEmail": "your.recipient@gmail.com"
      }
      ```
+
+     Example `appsettings.json` for database connection:
+     ```json
+     {
+       "ConnectionStrings": {
+         "DefaultConnection": "your_connection_string",
+         "IdentityConnection": "your_connection_string",
+         "IdentityConnection2": "your_connection_string"
+       }
+     }
+     ```
+
 4. Build and run the application in Visual Studio.
 
 ## Contributing
