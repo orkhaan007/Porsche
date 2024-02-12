@@ -17,12 +17,12 @@ Explore the world of Porsche with our WPF-based & EF Core application, where you
 
 This project utilizes the following NuGet packages:
 
-- Entity Framework Core
-- Entity Framework Tools
-- Entity Framework SQL Server
-- Microsoft.Extensions.Configuration.Json
-- Microsoft.EntityFrameworkCore.Design
-- Microsoft.EntityFrameworkCore.Proxies
+- **Entity Framework Core:** Framework for ORM (Object-Relational Mapping) for database operations.
+- **Entity Framework Tools:** Helper tools for EF Core database scaffolding.
+- **Entity Framework SQL Server:** EF Core support for SQL Server database.
+- **Microsoft.Extensions.Configuration.Json:** Used for reading configuration files in JSON format.
+- **Microsoft.EntityFrameworkCore.Design:** Provides EF Core command-line tools and design-time components.
+- **Microsoft.EntityFrameworkCore.Proxies:** Enables lazy loading and proxy support.
 
 ## Getting Started
 
