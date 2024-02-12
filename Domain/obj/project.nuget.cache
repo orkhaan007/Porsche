@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S4q+F/+Sffv2eYVqSL82bmkEZlJuVhvD144XgCZCVo199KE8X1Y7CdO2jUSFauxdH2Dr3/vdML36Er6t//pGkw==",
+  "dgSpecHash": "SpI4JMsEI7TYbAzFr9pWXBO02aBjg1FAmlpHPCwZUYZIj1HqCVcNI4LR9iSlopthXSQtXyH0FOlyawKYzlFcfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\orkha\\OneDrive\\Desktop\\Porsche-master\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\orkha\\OneDrive\\Desktop\\Porsche\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\orkha\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\orkha\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
