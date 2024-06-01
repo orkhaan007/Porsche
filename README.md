@@ -34,7 +34,7 @@ This project utilizes the following NuGet packages:
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/Orkhaann/Porsche.git`
+1. Clone the repository: `git clone https://github.com/orkhaan007/Porsche.git`
 2. Open the project in Visual Studio.
 3. Update App Settings:
    - Navigate to the `appsettings.json` file in the project.
