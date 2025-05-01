@@ -57,8 +57,6 @@ This project utilizes the following NuGet packages:
      {
        "ConnectionStrings": {
          "DefaultConnection": "your_connection_string",
-         "IdentityConnection": "your_connection_string",
-         "IdentityConnection2": "your_connection_string"
        }
      }
      ```
